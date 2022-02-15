@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>FF Registration</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container header-wrap">
+        <a href="/" class="header__logo">
+          <picture>
+            <source media="(max-width: 640px)" srcset="img/logo-m.svg" />
+            <source srcset="img/logo.webp" type="image/webp" />
+            <img src="img/logo.png" alt="Freedom24" width="200" height="35" />
+          </picture>
+        </a>
+
+        <div class="header-menu">
+          <div class="header__auth-menu menu">
+            <div class="menu__icon">
+              <span></span>
+            </div>
+            <div class="menu-body">
+              <button class="header__btn btn">Анкета</button>
+              <a href="#" class="header__link">Выход</a>
+            </div>
+          </div>
+
+          <div class="cart-menu">
+            <a href="#" class="cart-menu__link">
+              <div class="cart-menu__icon">
+                <svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M.949 1.899h1.33l.01.042 2.79 10.383.016.038a.95.95 0 0 0 .882.598h10.999c.187.001.43-.053.587-.156a.948.948 0 0 0 .353-.426l.02-.049 2.015-8.06v-.003a.957.957 0 0 0-.117-.84l-.01-.014-.012-.015a.956.956 0 0 0-.762-.38H4.65L3.859.65V.647A.948.948 0 0 0 2.96 0H.95a.949.949 0 0 0 0 1.899Zm17.527 2.514H4.4l1.921 7.152H16.69l1.787-7.152ZM7.987 15.475a1.565 1.565 0 1 0 0 3.13 1.565 1.565 0 0 0 0-3.13Zm-2.093-.529a2.96 2.96 0 1 1 4.187 4.187 2.96 2.96 0 0 1-4.187-4.187Zm9.134.529a1.565 1.565 0 1 0 0 3.13 1.565 1.565 0 0 0 0-3.13Zm-2.094-.529a2.96 2.96 0 1 1 4.187 4.187 2.96 2.96 0 0 1-4.187-4.187Z"
+                    fill="#000" />
+                </svg>
+                <span class="cart-menu__counter active">3</span>
+              </div>
+
+              <span class="cart-menu__text">Cart</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="resident">
+        <div class="container">
+          <div class="resident-wrap">
+            <h1 class="resident__title">Ваше налоговое резидентство</h1>
+
+            <h3 class="resident__step-title">Раскройте источник средств</h3>
+            <ul class="resident__step-progress step-progress">
+              <li class="step-progress__item active"></li>
+              <li class="step-progress__item active"></li>
+              <li class="step-progress__item"></li>
+              <li class="step-progress__item"></li>
+            </ul>
+
+            <div class="resident-form">
+              <form action="#" class="resident-form__body" id="form">
+                <div class="resident-form__item">
+                  <div class="select-wrap">
+                    <select name="resident-select" id="resident-select"
+                      class="resident-form__input resident-form__select js-input" required>
+                      <option value="">Налоговое резидентство</option>
+                      <option value="1">Пункт 1</option>
+                      <option value="2">Пункт 2</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="resident-form__item">
+                  <input class="resident-form__input js-input js-input-inn" id="residentInn" type="text" minlength="12"
+                    maxlength="12" required placeholder="Индивидуальный номер налогоплательщика" />
+                </div>
+
+                <div class="resident-form__item">
+                  <div class="checkbox">
+                    <label class="checkbox__label checkbox__label--control">Я не помню свой номер налогоплательщика
+                      <input type="checkbox" id="inn-remember" name="inn" class="checkbox__input js-input-checkbox" />
+                      <span class="checkbox__indicator"></span>
+                    </label>
+                  </div>
+                </div>
+
+
+                <div class="resident-form__block form-block">
+                  <h3 class="form-block__title">
+                    Являетесь ли Вы налоговым резидентом США?
+                  </h3>
+                  <div class="form-block__item form-block__item-row">
+                    <div class="form-options">
+                      <div class="form-options__item">
+                        <input type="radio" id="resYes" class="form-options__radio js-input js-options__radio"
+                          value="resYes" name="radio" required />
+                        <label for="resYes" class="form-options__label"><span>Да</span></label>
+                      </div>
+
+                      <div class="form-options__item">
+                        <input type="radio" id="resNo" class="form-options__radio js-input js-options__radio"
+                          value="resNo" name="radio" required />
+                        <label for="resNo" class="form-options__label"><span>Нет</span>
+                        </label>
+                      </div>
+                    </div>
+                    <span class="form-options__error">К сожалению, мы не можем открыть счет налоговому
+                      резиденту США.</span>
+                  </div>
+
+                  <div class="form-block__info">
+                    <p class="form-block__text">
+                      Попадаете ли Вы под категорию налогоплательщиков в
+                      Соединенных Штатах Америки по каким-либо другим
+                      причинам? (например, обладатель двойного резидентства,
+                      владелец загородного дома/помещения, подача совместной
+                      декларации о доходах с супругом и т.д.)
+                    </p>
+                  </div>
+                </div>
+
+
+                <div class="resident-form__block form-block">
+                  <h3 class="form-block__title">
+                    Вы или Ваши родственники связаны с публичными
+                    политическими персонами?
+                  </h3>
+                  <div class="form-block__item form-block__item-row">
+                    <div class="form-options">
+                      <div class="form-options__item">
+                        <input type="radio" id="politYes" class="form-options__radio js-input" name="radio1" required
+                          value="politYes" />
+                        <label for="politYes" class="form-options__label"><span>Да</span>
+                        </label>
+                      </div>
+                      <div class="form-options__item">
+                        <input type="radio" id="politNo" class="form-options__radio js-input" value="politNo" required
+                          name="radio1" />
+                        <label for="politNo" class="form-options__label"><span>Нет</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="resident-form__item">
+                  <div class="select-wrap">
+                    <select name="resident-welf" id="resident-welf"
+                      class="resident-form__input resident-form__select js-input" required>
+                      <option value="">Размер благосостояния</option>
+                      <option value="1">Пункт 1</option>
+                      <option value="2">Пункт 2</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <button type="submit" class="resident-form__btn btn">
+                  Продолжить
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
